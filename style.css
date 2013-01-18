@@ -1,0 +1,106 @@
+/*
+Theme Name: CEHA Congreso
+Theme URI: http://montera34.com
+Author: montera34
+Author URI: http://montera34.com
+Description: Theme for the XX CEHA Congress website
+Version: 1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns, left-sidebar, flexible-width
+Text Domain: cehagress
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+/* header */
+#preup {
+	margin-bottom: 10px;
+	height: 75px;
+}
+#banner {
+	background-color: #9c894d;
+	height: 75px;
+}
+#predown {
+	margin-bottom: 10px;
+}
+
+/* header menu */
+#navega {
+	border-bottom: 1px solid;
+}
+#pre-menu {
+        margin: 0 !important;
+        display: inline-block;
+}
+#pre-menu li {
+        list-style-type: none;
+        display: inline-block;
+        margin-right: 10px;
+	padding: 5px 0 10px;
+	border-top: 10px solid;
+}
+/* header menu desplegable */
+#pre-menu li a {
+        display: block!important;
+        display: block;
+        position: relative;
+        text-decoration: none;
+        z-index: 999;
+}
+#pre-menu li:hover,
+#pre-menu li a:hover,
+#pre-menu li:hover a {
+        position: relative;
+        z-index: 999;
+	background-color: #eee;
+}
+#pre-menu li ul {
+        display: none;
+        position: absolute;
+        z-index: 999;
+        width: 200px;
+        text-align: left;
+        left: 0px;
+        padding: 11px 0 5px;
+        margin: 0 !important;
+}
+#pre-menu li a:hover ul,
+#pre-menu li:hover ul {
+        display: block !important;
+}
+#pre-menu li a:hover ul li,
+#pre-menu li:hover ul li{
+        position: relative;
+        display: block;
+        margin: 0 !important;
+        padding: 0 !important;
+        z-index: 999;
+	border: none;
+	background-color: #eee;
+}
+
+/* sidebar */
+#margen {
+	border-top: 10px solid;
+	margin-top: 10px;
+	padding-top: 10px;
+}
+
+/* content */
+.filete {
+	border-top: 10px solid;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#content {
+}
+
+/* footer */
+#epi {
+	background-color: #6298ad;
+	color: #fff;
+	min-height: 100px;
+}
