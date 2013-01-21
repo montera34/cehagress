@@ -73,7 +73,7 @@ $color_class = $colors[$color_key];
 			</div><!-- #banner -->
 	</div><!-- #preup -->
 	<div id="predown" class="row">
-			<div id="logo" class="span3">
+			<div id="logo" class="span3" style="<?php echo "background-image: url('" .$genvars['blogtheme']. "/images/logo-" .$color_class. ".png')"; ?>">
 				<?php echo $genvars['blogname']; ?>
 			</div><!-- #logo -->
 			<div id="navega" class="span9">

@@ -20,22 +20,19 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	height: 75px;
 }
 #banner {
-	background-color: #9c894d;
 	height: 75px;
 }
 #predown {
 	margin-bottom: 10px;
 }
 #logo {
-	height: 84px;
-	background-image: url('images/logo-red.png');
+	height: 84px;	
 	background-repeat: no-repeat;
 	text-indent: -9999px;
 }
 
 /* header menu */
 #navega {
-	border-bottom: 1px solid;
 }
 #pre-menu {
         margin: 0 !important;
@@ -106,7 +103,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /* footer */
 #epi {
-	background-color: #6298ad;
 	color: #fff;
 	min-height: 100px;
 }
