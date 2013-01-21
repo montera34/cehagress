@@ -32,6 +32,8 @@ require_once( get_stylesheet_directory(). '/general-vars.php' );
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 
+<link rel="stylesheet/less" href="<?php echo $genvars['blogtheme']; ?>/style.less" media="all" />
+<script src="<?php echo $genvars['blogtheme']; ?>/js/less-1.3.3.min.js"></script>
 <!-- Bootstrap -->
 <link href="<?php echo $genvars['blogtheme']; ?>/css/bootstrap.min.css" rel="stylesheet" />
 <!-- Font Squirrel -->
@@ -48,7 +50,17 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 
 </head>
 
-<body>
+<?php
+// color modes:
+// @red + @blue
+// @purple + @green
+// @darkblue + @gold
+// @olive + @bluesea
+$colors = array('red_blue','purple_green','darkblue_gold','olive_bluesea');
+$color_key = array_rand($colors, 1);
+$color_class = $colors[$color_key];
+?>
+<body class="<?php echo $color_class ?>">
 
 <div id="super" class="container">
 

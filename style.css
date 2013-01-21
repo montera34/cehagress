@@ -26,6 +26,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
 #predown {
 	margin-bottom: 10px;
 }
+#logo {
+	height: 84px;
+	background-image: url('images/logo-red.png');
+	background-repeat: no-repeat;
+	text-indent: -9999px;
+}
 
 /* header menu */
 #navega {
