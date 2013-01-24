@@ -39,3 +39,12 @@
 .olive_bluesea #banner {
 	color: @olive;
 }
+
+.setColor(@color) {
+    (~"body.@{color}") { background-color: ~"@{@{color}}";
+        #container { background-color: ~"@{@{color}}";
+         p { color: ~"@{@{color}}"; }
+      }
+    }
+}
+.setColor("red"); // Quotes, or the value is parsed as "#FF0000" instead of "red"

@@ -68,8 +68,8 @@ $color_class = $colors[$color_key];
 			<div id="lema" class="span3">
 				1-4 Octubre 2014
 			</div><!-- #lema -->
-			<div id="banner" class="span9">
-				<?php echo $genvars['blogdesc']; ?>
+			<div id="banner" class="span5">
+				<h2 class="tit2"><em><?php echo $genvars['blogdesc']; ?></em></h2>
 			</div><!-- #banner -->
 	</div><!-- #preup -->
 	<div id="predown" class="row">
