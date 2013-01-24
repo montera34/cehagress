@@ -49,4 +49,51 @@ function create_post_type() {
 //		'map_meta_cap' => true, // should be true to make capability_type works
 //		'capability_type' => 'page',
 	));
+} // end function create post type
+
+// CUSTOM META BOXES (using cmb lib) FOR CREATION CUSTOM STYLES
+// see lib/metabox/example-functions.php for more info
+// see https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki if you want even more
+add_filter( 'cmb_meta_boxes', 'cmb_sample_metaboxes' );
+
+
+function cmb_sample_metaboxes( array $meta_boxes ) {
+	$prefix = '_cmb_';
+	$meta_boxes[] = array(
+		'id'         => 'evento',
+		'title'      => 'Fechas del evento',
+		'pages'      => array( 'evento', ), // Post type
+		'context'    => 'side',
+		'priority'   => 'high',
+		'show_names' => false, // Show field names on the left
+		'fields'     => array(
+			array(
+				'name' => 'Fecha fin',
+				'desc' => 'Selecciona el día en que caduca el evento.',
+				'id'   => $prefix . 'evento_fin',
+				'type' => 'text_date',
+			),
+			array(
+				'name' => 'Fecha inicio',
+				'desc' => 'En el caso de que el evento dure varios días, selecciona el día en que empieza el evento.',
+				'id'   => $prefix . 'evento_fin',
+				'type' => 'text_date',
+			),
+		)
+	);
+	// Add other metaboxes as needed
+
+	return $meta_boxes;
+} // end function cmb
+add_action( 'init', 'cmb_initialize_cmb_meta_boxes', 9999 );
+/**
+ * Initialize the metabox class.
+ */
+function cmb_initialize_cmb_meta_boxes() {
+
+	if ( ! class_exists( 'cmb_Meta_Box' ) )
+		require_once 'lib/metabox/init.php';
+
+}
+
 ?>

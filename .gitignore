@@ -4,3 +4,6 @@ js/
 images/
 screenshot.png
 fonts/
+lib/
+wp-config.php
+.htaccess
