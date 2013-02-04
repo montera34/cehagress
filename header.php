@@ -88,8 +88,8 @@ $color_class = $colors[$color_key];
 		                        wp_nav_menu( $args );
 		                        ?>
 			</div><!-- #navega -->
-			<div id="breadcrumb" class="span9 offset3">
-					Breadcrumb
+			<div id="breadcrumb" class="span9">
+				<?php include "breadcrumbs.php"; ?>
 			</div><!-- #breadcrumb -->
 	</div><!-- #preup -->
 
