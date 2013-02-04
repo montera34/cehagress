@@ -1,4 +1,4 @@
-<ul class="breadcrumbs unstyled inline">
+<ul class="breadcrumb">
 <?php
 if ( is_home() ) {
 // if home

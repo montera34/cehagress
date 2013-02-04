@@ -131,4 +131,8 @@ margin-bottom: 10px;
 #epi {
 	color: #fff;
 	min-height: 100px;
+	margin-top: 75px;
+}
+#epi img {
+	margin: 10px 0 0 5px;
 }
