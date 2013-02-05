@@ -71,14 +71,15 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'name' => 'Fecha fin',
 				'desc' => 'Selecciona el día en que caduca el evento.',
 				'id'   => $prefix . 'evento_fin',
-				'type' => 'text_date',
+				'type' => 'text_date_timestamp',
 			),
 			array(
 				'name' => 'Fecha inicio',
 				'desc' => 'En el caso de que el evento dure varios días, selecciona el día en que empieza el evento.',
-				'id'   => $prefix . 'evento_fin',
-				'type' => 'text_date',
+				'id'   => $prefix . 'evento_inicio',
+				'type' => 'text_date_timestamp',
 			),
+
 		)
 	);
 	// Add other metaboxes as needed
