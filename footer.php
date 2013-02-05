@@ -3,7 +3,7 @@ global $genvars;
 require_once( get_stylesheet_directory(). '/general-vars.php' );
 ?>
 
-		<div style="background-color: #ccc;" id="epi" class="span9">
+		<div style="background-color: #ccc;" id="epi" class="span9 offset3">
 		<div class="row">
 			<div class="span2">
 			<h3 class="tit3" style="margin-left: 5px;">Organizadores:</h3>	
