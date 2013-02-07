@@ -59,6 +59,43 @@ if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 $colors = array('red_blue','purple_green','darkblue_gold','olive_bluesea');
 $color_key = array_rand($colors, 1);
 $color_class = $colors[$color_key];
+
+// random image in header
+$args = array(
+	'post_type' => 'page',
+	'meta_key' => '_cmb_random_image_true',
+	'meta_value' => 'on',
+	'nopaging' => 'true',
+);
+$random_query = new WP_Query( $args );
+if ( $random_query->have_posts() ) {
+	while ( $random_query->have_posts() ) : $random_query->the_post();
+		//global $imgs_src;
+		$imgs_src = array();
+		$img1_src = get_post_meta( $post->ID, "_cmb_random_image1", true );
+		$img2_src = get_post_meta( $post->ID, "_cmb_random_image2", true );
+		$img3_src = get_post_meta( $post->ID, "_cmb_random_image3", true );
+		$img4_src = get_post_meta( $post->ID, "_cmb_random_image4", true );
+		if ( $img1_src != '' ) { array_push($imgs_src,$img1_src); }
+		if ( $img2_src != '' ) { array_push($imgs_src,$img2_src); }
+		if ( $img3_src != '' ) { array_push($imgs_src,$img3_src); }
+		if ( $img4_src != '' ) { array_push($imgs_src,$img4_src); }
+		//global $imgs_pos;
+		$imgs_pos = array();
+		$img1_pos = get_post_meta( $post->ID, "_cmb_random_image1_pos", true );
+		$img2_pos = get_post_meta( $post->ID, "_cmb_random_image2_pos", true );
+		$img3_pos = get_post_meta( $post->ID, "_cmb_random_image3_pos", true );
+		$img4_pos = get_post_meta( $post->ID, "_cmb_random_image4_pos", true );
+		if ( $img1_pos != '' ) { array_push($imgs_pos,$img1_pos); }
+		if ( $img2_pos != '' ) { array_push($imgs_pos,$img2_pos); }
+		if ( $img3_pos != '' ) { array_push($imgs_pos,$img3_pos); }
+		if ( $img4_pos != '' ) { array_push($imgs_pos,$img4_pos); }
+		if ( count($imgs_src > 0 ) ) { $rand_img = array_rand($imgs_src, 1); }
+		global $random_img_home;
+		$random_img_home = "<img src='" .$imgs_src[$rand_img]. "' alt='" .$genvars['blogname']. " -- " .$genvars['blogdesc']. "' />";
+		$random_img_pre = "<div style='height: 75px; text-indent: -9999px; background-image: url(" .$imgs_src[$rand_img]. "); background-repeat: no-repeat; background-position: 0 -" .$imgs_pos[$rand_img]. "px;'>" .$genvars['blogname']. " -- " .$genvars['blogdesc']. "</div>";
+	endwhile;
+}
 ?>
 <body class="<?php echo $color_class ?>">
 
@@ -68,8 +105,10 @@ $color_class = $colors[$color_key];
 			<div id="lema" class="span3">
 				1-4 Octubre 2014
 			</div><!-- #lema -->
-			<div id="banner" class="span5">
-				<h2 class="tit2"><em><?php echo $genvars['blogdesc']; ?></em></h2>
+			<div id="banner" class="span9">
+				<?php if ( is_front_page() ) { ?>
+					<h2 class="tit2"><em><?php echo $genvars['blogdesc']; ?></em></h2>
+				<?php } else { echo $random_img_pre; } ?>
 			</div><!-- #banner -->
 	</div><!-- #preup -->
 	<div id="predown" class="row">
