@@ -1,11 +1,16 @@
 <?php get_header(); ?>
 
-<div class="span1 filete"></div>
 <div id="content" class="span9">
-	<h2 class="art-tit tit2">Ulpa sit aut a sequiatet et quam et endebitis in et ea net aut alique nonsed modi dolut doluptas incil il ius, voluptatquas eos mi, is esciis quo bero maiorer spitae pe ne nate eiunt eum am autate am consequam faccus, vendam sunt facipis dicti ullent aut laborrovidit</h2>
+
 	<div class="art-text">
-		<p>Ulpa sit aut a sequiatet et quam et endebitis in et ea net aut alique nonsed modi dolut doluptas incil il ius, voluptatquas eos mi, is esciis quo bero maiorer spitae pe ne nate eiunt eum am autate am consequam faccus, vendam sunt facipis dicti ullent aut laborrovidit</p>
+		<h2 class="art-tit tit2">La portada no está configura. Puedes hacerlo fácilmente siguiendo las siguiente instrucciones</h2>
+		<p>Para aprovechar la capacidad de meter imágenes en la portada, haz lo siguiente:</p>
+		<ol>
+			<li>Crea una página en el administrador, llámala por ejemplo Portada, y configura las fotografías que quieres que se muestren de manera aleatoria en la portada.</li>
+			<li>En el administrador ve a Ajustes :: Lectura. Selecciona en Página frontal muestra la opción Una página estática, y en el desplegable Página inicial seleccionar la página creada en el paso anterior.</li>
+		</ol>
 	</div>
+
 </div><!-- #content -->
 
 <?php get_footer(); ?>

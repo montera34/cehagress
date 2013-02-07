@@ -1,6 +1,6 @@
 <ul class="breadcrumb">
 <?php
-if ( is_home() ) {
+if ( is_front_page() ) {
 // if home
 	// no breadcrumb
 

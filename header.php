@@ -74,7 +74,7 @@ $color_class = $colors[$color_key];
 	</div><!-- #preup -->
 	<div id="predown" class="row">
 			<div id="logo" class="span3" style="<?php echo "background-image: url('" .$genvars['blogtheme']. "/images/logo-" .$color_class. ".png')"; ?>">
-				<?php echo $genvars['blogname']; ?>
+				<a href="<?php echo $genvars['blogurl']; ?>"><?php echo $genvars['blogname']; ?></a>
 			</div><!-- #logo -->
 			<div id="navega" class="span9">
 					<?php // main navigation menu for home page

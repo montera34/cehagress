@@ -49,6 +49,10 @@ margin-bottom: 10px;
 	background-repeat: no-repeat;
 	text-indent: -9999px;
 }
+#logo a {
+	height: 85px;
+	display: block;
+}
 
 /* header menu */
 #navega {
