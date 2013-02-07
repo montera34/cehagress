@@ -52,6 +52,7 @@ margin-bottom: 10px;
 
 /* header menu */
 #navega {
+	border-bottom: 1px solid;
 }
 #pre-menu {
         margin: 0 !important;

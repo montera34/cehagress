@@ -18,8 +18,9 @@ $args = array(
 			'compare' => '!='
 		),
 	),
+	'meta_key' => '_cmb_evento_fin',
 	'order' => 'ASC',
-	'order_by' => 'meta_value_num',
+	'orderby' => 'meta_value_num',
 );
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) { ?>
@@ -31,12 +32,14 @@ if ( $the_query->have_posts() ) { ?>
 		$evento_id = get_the_ID();
 		$evento_inicio = get_post_meta( $evento_id, "_cmb_evento_inicio", true );
 		$evento_fin = get_post_meta( $evento_id, "_cmb_evento_fin", true );
+		$evento_fin_human = date("d/m/Y", $evento_fin);
 //		echo $evento_inicio;
 //		echo $evento_fin;
 	?>
 
 		<li class="topslim">
 			<h3 class="tit3 fontup"><a href="<?php the_permalink(); ?>" title="Más información sobre el evento" rel="bookmark"><?php the_title(); ?></a></h3>
+			<span class="muted">Hasta el <?php echo $evento_fin_human; ?></span>
 			<p><?php the_excerpt_rss(); ?></p>
 		</li>
 	<?php endwhile; ?>
