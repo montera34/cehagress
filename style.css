@@ -129,14 +129,14 @@ margin-bottom: 10px;
 
 }
 .art-text {
-	margin-top: 1em;
+	margin-top: 10px;
 }
 
 /* footer */
 #epi {
 	color: #fff;
 	min-height: 100px;
-	margin-top: 75px;
+	margin-top: 10px;
 }
 #epi img {
 	margin: 10px 0 0 5px;

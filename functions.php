@@ -59,6 +59,8 @@ add_filter( 'cmb_meta_boxes', 'cmb_sample_metaboxes' );
 
 function cmb_sample_metaboxes( array $meta_boxes ) {
 	$prefix = '_cmb_';
+	// event dates meta box
+	// just for evento post type
 	$meta_boxes[] = array(
 		'id'         => 'evento',
 		'title'      => 'Fechas del evento',
@@ -80,6 +82,94 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'type' => 'text_date_timestamp',
 			),
 
+		)
+	);
+	// random images meta box
+	// just for page-home.php page template
+	$meta_boxes[] = array(
+		'id'         => 'random-img',
+		'title'      => 'Imágenes aleatorias para esta página',
+		'pages'	     => array('page'), // post type
+		'show_on'    => array( 'key' => 'page-template', 'value' => 'page-home.php' ),
+		'context'    => 'normal',
+		'priority'   => 'high',
+		'show_names' => true, // Show field names on the left
+		'fields'     => array(
+			array(
+				'name' => 'Primera',
+				'desc' => 'Sube una imagen de 1024x540px',
+				'id' => $prefix . 'random_image1',
+				'type' => 'file',
+				'save_id' => false, // save ID using true
+				'allow' => array( 'url','attachment' ) // limit to just attachments with array( 'attachment' )
+			),
+			array(
+				'name' => 'Segunda',
+				'desc' => 'Sube una imagen de 1024x540px',
+				'id' => $prefix . 'random_image2',
+				'type' => 'file',
+				'save_id' => false, // save ID using true
+				'allow' => array( 'url','attachment' ) // limit to just attachments with array( 'attachment' )
+			),
+			array(
+				'name' => 'Tercera',
+				'desc' => 'Sube una imagen de 1024x540px',
+				'id' => $prefix . 'random_image3',
+				'type' => 'file',
+				'save_id' => false, // save ID using true
+				'allow' => array( 'url','attachment' ) // limit to just attachments with array( 'attachment' )
+			),
+			array(
+				'name' => 'Cuarta',
+				'desc' => 'Sube una imagen de 1024x540px',
+				'id' => $prefix . 'random_image4',
+				'type' => 'file',
+				'save_id' => false, // save ID using true
+				'allow' => array( 'url','attachment' ) // limit to just attachments with array( 'attachment' )
+			),
+		)
+	);
+	// images to use in home page meta box
+	// just for page-home.php page template
+	$meta_boxes[] = array(
+		'id'         => 'pre-img',
+		'title'      => 'Posición de las imágenes de esta página en la cabecera general',
+		'pages'	     => array('page'), // post type
+		'show_on'    => array( 'key' => 'page-template', 'value' => 'page-home.php' ),
+		'context'    => 'normal',
+		'priority'   => 'high',
+		'show_names' => false, // Show field names on the left
+		'fields'     => array(
+			array(
+				'name' => '',
+				'desc' => 'Utilizar las imágenes de esta página para la cabecera general.',
+				'id' => $prefix . 'random_image_true',
+				'type' => 'checkbox'
+			),
+			array(
+				'name' => '',
+				'desc' => 'Porción visible de la 1ª imagen en la cabecera. Valor entre 0 y 465. 0 mostrará la parte inferior de la imagen; 465 la superior.',
+				'id' => $prefix . 'random_image1_pos',
+				'type' => 'text_small'
+			),
+			array(
+				'name' => '',
+				'desc' => 'Porción visible de la 2ª imagen en la cabecera. Valor entre 0 y 465. 0 mostrará la parte inferior de la imagen; 465 la superior.',
+				'id' => $prefix . 'random_image2_pos',
+				'type' => 'text_small'
+			),
+			array(
+				'name' => '',
+				'desc' => 'Porción visible de la 3ª imagen en la cabecera. Valor entre 0 y 465. 0 mostrará la parte inferior de la imagen; 465 la superior.',
+				'id' => $prefix . 'random_image3_pos',
+				'type' => 'text_small'
+			),
+			array(
+				'name' => '',
+				'desc' => 'Porción visible de la 4ª imagen en la cabecera. Valor entre 0 y 465. 0 mostrará la parte inferior de la imagen; 465 la superior.',
+				'id' => $prefix . 'random_image4_pos',
+				'type' => 'text_small'
+			),
 		)
 	);
 	// Add other metaboxes as needed

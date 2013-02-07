@@ -11,6 +11,4 @@
 		</ol>
 	</div>
 
-</div><!-- #content -->
-
 <?php get_footer(); ?>

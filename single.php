@@ -15,6 +15,4 @@ if ( have_posts() ) {
 	<?php endwhile;
 } // end loop ?>
 
-</div><!-- #content -->
-
 <?php get_footer(); ?>
