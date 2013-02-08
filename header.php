@@ -96,6 +96,7 @@ if ( $random_query->have_posts() ) {
 		$random_img_pre = "<div style='height: 75px; text-indent: -9999px; background-image: url(" .$imgs_src[$rand_img]. "); background-repeat: no-repeat; background-position: 0 -" .$imgs_pos[$rand_img]. "px;'>" .$genvars['blogname']. " -- " .$genvars['blogdesc']. "</div>";
 	endwhile;
 }
+wp_reset_query()
 // end random image in header
 ?>
 

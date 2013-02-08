@@ -16,12 +16,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 .tit1,
 .tit2 {
-	font: bold normal normal 20px/30px 'bemboregular',serif;
+	font: normal normal normal 20px/30px 'bemboextrabold',serif;
 	margin: 0;
 }
 .tit3,
 .tit4 {
-	font: bold normal normal 14px/18px 'bemboregular',serif;
+	font: normal normal normal 14px/18px 'bemboextrabold',serif;
 	margin: 0;
 }
 .fontup {
@@ -40,6 +40,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 #predown {
 	margin-bottom: 10px;
+	font-family: 'bemboextrabold',serif;
 }
 #banner,
 #lema {
@@ -80,6 +81,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
         margin-right: 10px;
 	padding: 5px 0 10px;
 	border-top: 10px solid;
+}
+.current_page_item,
+.current-menu-ancestor {
+	background-color: #eee;
 }
 /* header menu desplegable */
 #pre-menu li a {
