@@ -96,14 +96,19 @@ if ( $random_query->have_posts() ) {
 		$random_img_pre = "<div style='height: 75px; text-indent: -9999px; background-image: url(" .$imgs_src[$rand_img]. "); background-repeat: no-repeat; background-position: 0 -" .$imgs_pos[$rand_img]. "px;'>" .$genvars['blogname']. " -- " .$genvars['blogdesc']. "</div>";
 	endwhile;
 }
+// end random image in header
 ?>
+
 <body class="<?php echo $color_class ?>">
 
 <div id="super" class="container">
 
 	<div id="preup" class="row">
 			<div id="lema" class="span3">
-				1-4 Octubre 2014
+				<div class="fontup"><strong>1-4 Octubre 2014</strong></div>
+				<?php if ( !is_front_page() ) { ?>
+				<div id="lema-tagline" class="tit3"><em><?php echo $genvars['blogdesc']; ?></em></div>
+				<?php } ?>
 			</div><!-- #lema -->
 			<div id="banner" class="span9">
 				<?php if ( is_front_page() ) { ?>
@@ -113,7 +118,7 @@ if ( $random_query->have_posts() ) {
 	</div><!-- #preup -->
 	<div id="predown" class="row">
 			<div id="logo" class="span3" style="<?php echo "background-image: url('" .$genvars['blogtheme']. "/images/logo-" .$color_class. ".png')"; ?>">
-				<a href="<?php echo $genvars['blogurl']; ?>"><?php echo $genvars['blogname']; ?></a>
+				<a href="<?php echo $genvars['blogurl']; ?>"><h1><?php echo $genvars['blogname']; ?></h1></a>
 			</div><!-- #logo -->
 			<div id="navega" class="span9">
 					<?php // main navigation menu for home page

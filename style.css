@@ -35,13 +35,20 @@ Use it to make something cool, have fun, and share what you've learned with othe
 /* header */
 #preup {
 	margin-bottom: 10px;
+	margin-top: 10px;
 	height: 75px;
 }
 #predown {
-margin-bottom: 10px;
+	margin-bottom: 10px;
 }
-#banner {
+#banner,
+#lema {
 	height: 75px;
+	position: relative;
+}
+#lema-tagline {
+	position: absolute;
+	bottom: 0;
 }
 
 #logo {
@@ -53,6 +60,11 @@ margin-bottom: 10px;
 	height: 85px;
 	display: block;
 }
+.breadcrumb {
+	background-color: transparent !important;
+	padding: 8px 0;
+}
+
 
 /* header menu */
 #navega {
