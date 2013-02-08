@@ -51,6 +51,10 @@ function create_post_type() {
 	));
 } // end function create post type
 
+// thumbnails support
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( "220", "220" );
+
 // CUSTOM META BOXES (using cmb lib) FOR CREATION CUSTOM STYLES
 // see lib/metabox/example-functions.php for more info
 // see https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress/wiki if you want even more
