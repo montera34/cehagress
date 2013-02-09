@@ -142,12 +142,22 @@ Use it to make something cool, have fun, and share what you've learned with othe
 #content {
 }
 /* single and page */
+.art {
+	margin-bottom: 100px;
+}
 .art-tit {
 
 }
 .art-text {
 	margin-top: 10px;
 }
+.art-meta {
+	margin-top: 40px;
+}
+.art-meta-col {
+	border-top: 1px solid #ccc;
+}
+
 /* archive list*/
 .list-item {
 	margin-bottom: 30px;

@@ -32,7 +32,7 @@ if ( is_front_page() ) {
 // if post ?>
 	<li><a href="<?php echo $genvars['blogurl']; ?>">Inicio</a> <span class="divider">&rsaquo;</span></li>
 	<li><a href="<?php echo $genvars['blogurl']; ?>">Noticias</a> <span class="divider">&rsaquo;</span></li>
-	<li><?php the_title(); ?>"</li>
+	<li><?php the_title(); ?></li>
 
 <?php // end if post
 }
