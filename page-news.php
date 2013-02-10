@@ -21,9 +21,12 @@ if ( have_posts() ) {
 		</div>
 
 	<?php endwhile;
-} // end this page loop ?>
+} // end this page loop
+wp_reset_query()
+?>
 
 <?php // news loop
+$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
 	'post_type' => 'post'
 );
@@ -33,6 +36,7 @@ if ( $news_query->have_posts() ) :
 	while ( $news_query->have_posts() ) : $news_query->the_post();
 		include "loop.list.php";
 	endwhile;
+include "navigation.php";
 else :
 // if no news, code in here
 endif;
