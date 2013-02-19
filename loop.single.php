@@ -25,7 +25,9 @@
 					}
 				} ?>
 				</li>
-			<?php } else { // if is not evento ?>
+			<?php } elseif( get_post_type( $post->ID ) == 'page' ) { // if page ?>
+				<li>Contenido publicado </strong>el <strong><?php the_time('F d, Y') ?></strong></li>
+			<?php } else { // if not evento neither page ?>
 			<li>Por <strong><?php the_author_posts_link(); ?>, </strong>el <strong><?php the_time('F d, Y') ?></strong></li>
 			<li>Archivado en: <strong><?php the_category(', '); ?></strong>, <?php the_tags('<span class="tags">',', ','</span>'); ?></li>
 			<?php } ?>
