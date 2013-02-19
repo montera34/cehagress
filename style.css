@@ -138,6 +138,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	border-top: 10px solid;
 	margin-top: 10px;
 	margin-bottom: 5px;
+	height: 0!important;
+	min-height: 0!important;
 }
 #content {
 }
@@ -163,8 +165,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	margin-bottom: 30px;
 	padding-top: 5px;
 }
-.list-tit {
-
+.list-tit a {
+	color:;
 }
 .list-meta {
 

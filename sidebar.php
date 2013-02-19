@@ -32,14 +32,22 @@ if ( $the_query->have_posts() ) { ?>
 		$evento_id = get_the_ID();
 		$evento_inicio = get_post_meta( $evento_id, "_cmb_evento_inicio", true );
 		$evento_fin = get_post_meta( $evento_id, "_cmb_evento_fin", true );
-		$evento_fin_human = date("d/m/Y", $evento_fin);
 //		echo $evento_inicio;
 //		echo $evento_fin;
 	?>
 
 		<li class="topslim">
 			<h3 class="tit3 fontup"><a href="<?php the_permalink(); ?>" title="Más información sobre el evento" rel="bookmark"><?php the_title(); ?></a></h3>
-			<span class="muted">Hasta el <?php echo $evento_fin_human; ?></span>
+			<span class="muted">
+				<?php if ( $evento_inicio != '' ) {
+					$evento_inicio_human = date("d/m/Y", $evento_inicio);
+					$evento_fin_human = date("d/m/Y", $evento_fin);
+					echo "Desde el " .$evento_inicio_human. " hasta el " .$evento_fin_human. ".";
+				} else {
+					$evento_fin_human = date("d/m/Y", $evento_fin);
+					echo "Hasta el " .$evento_fin_human. ".";
+				} ?>
+			</span>
 			<p><?php the_excerpt_rss(); ?></p>
 		</li>
 	<?php endwhile; ?>

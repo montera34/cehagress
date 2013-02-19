@@ -28,6 +28,7 @@ $args = array(
 	),
 
 );
+// past events loop
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) {
 	$count = 0;
@@ -35,19 +36,26 @@ if ( $the_query->have_posts() ) {
 		$count++;
 		if ( $count == 1 ) { echo "<div class='row'>"; }
 		$evento_id = $post->ID;
-		$today = time(); //echo $today;
+		$today = time();
+//		$evento_inicio = get_post_meta( $evento_id, "_cmb_evento_inicio", true );
 		$evento_fin = get_post_meta( $evento_id, "_cmb_evento_fin", true );
-			if ( $evento_fin < $today ) {
-			// evento caducado ?>
-			<div class="span3 muted">
-			<?php } else { ?>
-			<div class="span3">
-		<?php } ?>
-			<h3 class="list-tit tit3"><?php the_title(); ?></h3>
-		<div class="list-text">
-			<?php the_content(); ?>
-		</div>
+		?>
+		<div class="span3 muted topslim">
+			<h3 class="list-tit tit3 fontup"><a class="muted" href="<?php the_permalink(); ?>" title="Más información sobre el evento" rel="bookmark"><?php the_title(); ?></a></h3>
+			<span>
+				<?php if ( $evento_inicio != '' ) {
+					$evento_inicio_human = date("d/m/Y", $evento_inicio);
+					$evento_fin_human = date("d/m/Y", $evento_fin);
+					echo "Desde el " .$evento_inicio_human. " hasta el " .$evento_fin_human. ".";
+				} else {
+					$evento_fin_human = date("d/m/Y", $evento_fin);
+					echo "Caducó el " .$evento_fin_human. ".";
+				} ?>
+			</span>
+			<div class="list-text">
+				<?php the_content(); ?>
 			</div>
+		</div>
 
 		<?php if ( $count == 3 ) { echo "</div><!-- .row -->"; $count = 0; }
 	endwhile;
