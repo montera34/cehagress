@@ -46,7 +46,7 @@ require_once( get_stylesheet_directory(). '/general-vars.php' );
 
 <?php
 if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
-	wp_head(); ?>
+wp_head(); ?>
 
 </head>
 

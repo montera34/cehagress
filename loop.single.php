@@ -5,17 +5,40 @@
 		wp_link_pages( array( 'before' => '<section><div class="art-nav">P&aacute;ginas: ', 'after' => '</div></section>' ) ); ?>
 	</div>
 	<div class="art-meta row muted">
-		<div class="span7 art-meta-col unstyled">
+		<div class="span5 art-meta-col topslim">
 		<ul class="unstyled">
+			<?php if( get_post_type( $post->ID ) == 'evento' ) { // if evento
+				$evento_id = $post->ID;
+				$today = time();
+				$evento_inicio = get_post_meta( $evento_id, "_cmb_evento_inicio", true );
+				$evento_fin = get_post_meta( $evento_id, "_cmb_evento_fin", true );
+						$evento_fin_human = date("d/m/Y", $evento_fin); ?>
+				<li><i class="icon-calendar"></i> 
+				<?php if ( $evento_fin < $today ) {
+					echo "<span class='btn-warning'>Este evento caducó el " .$evento_fin_human. ".</span>";
+				} else {
+					if ( $evento_inicio != '' ) {
+						$evento_inicio_human = date("d/m/Y", $evento_inicio);
+						echo "Desde el " .$evento_inicio_human. " hasta el " .$evento_fin_human. ".";
+					} else {
+						echo "Caducó el " .$evento_fin_human. ".";
+					}
+				} ?>
+				</li>
+			<?php } else { // if is not evento ?>
 			<li>Por <strong><?php the_author_posts_link(); ?>, </strong>el <strong><?php the_time('F d, Y') ?></strong></li>
 			<li>Archivado en: <strong><?php the_category(', '); ?></strong>, <?php the_tags('<span class="tags">',', ','</span>'); ?></li>
+			<?php } ?>
 			<li><i class="icon-comment"></i> <?php comments_popup_link('Ningún  comentarios', '1 comentarios', '% comentarios'); ?></li>
 		</ul>
 		</div>
-		<div class="span2 art-meta-col">
-			<ul class="unstyled" style="margin-top: 3px;">
-				<?php include "social.php"; ?>
-			</ul>
+		<div class="span4 art-meta-col topslim">
+			<?php include "social.php"; ?>
 		</div>
-	</div>
+	</div><!-- .art-meta -->
+	<div class="art-comments row">
+		<div class="span9 topslim">
+		<?php comments_template(); ?>
+		</div>
+	</div><!-- .art-comments -->
 </div>

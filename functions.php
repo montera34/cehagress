@@ -40,7 +40,7 @@ function create_post_type() {
 //		'menu_icon' => get_template_directory_uri() . '/images/icon-post.type-integrantes.png',
 		'hierarchical' => false, // if true this post type will be as pages
 		'query_var' => true,
-		'supports' => array('title', 'editor','excerpt','author'),
+		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks'),
 		'taxonomies' => array(),
 		'rewrite' => array('slug'=>'evento','with_front'=>false),
 		'can_export' => true,
@@ -191,4 +191,88 @@ function cmb_initialize_cmb_meta_boxes() {
 
 }
 
+// Twenty Eleven theme comments function with some modifications
+if ( ! function_exists( 'vb_comment' ) ) :
+/**
+ * Template for comments and pingbacks.
+ *
+ * Used as a callback by wp_list_comments() for displaying the comments.
+ */
+function vb_comment( $comment, $args, $depth ) {
+	$GLOBALS['comment'] = $comment;
+	switch ( $comment->comment_type ) :
+		case 'pingback' :
+		case 'trackback' :
+	?>
+	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+		<span class="ping-tit"><?php comment_author_link(); ?></span><br />
+		<?php edit_comment_link('Editar', '<span class="edit-link">', '</span> | ');
+		comment_text(); ?>
+	</li>
+	<?php	break;
+		default :
+
+			if ($comment->comment_approved == '0') { // if comment is not approved ?>
+				<li id="comment-<?php comment_ID(); ?>" <?php comment_class(); ?>>
+					<p>Tu comentario ser&aacute; revisado antes de aparecer publicado.</p>
+       				</li>
+	<?php		} else { // if comment is approved ?>
+
+	<li id="comment-<?php comment_ID(); ?>" <?php comment_class(array("row","bottomslim")); ?>>
+		<div class="comment-meta row">
+			<?php $avatar_size = 64;
+			//if ( '0' != $comment->comment_parent ) { $avatar_size = 32; } ?>
+			<div class="comment-avatar span1"><?php echo get_avatar( $comment, $avatar_size ); ?></div>
+			<div class="span4">
+			<ul class="unstyled">
+				<li>Autor: <?php comment_author_link(); ?></li>
+				<li><time datetime="<?php comment_date('Y-m-Y') ;?>" class="comment-date"><?php comment_date('d \d\e F \d\e Y'); ?></time></li>
+				<li><a href="<?php comment_link( $comment->comment_ID ); ?>" title="Enlace permanente a este comentario">Enlace permanente al comentario</a></li>
+			</ul>
+			</div>
+		</div>
+		<div class="comment-text row">
+			<div class="span5">
+			<?php comment_text(); ?>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span5"><i class="icon-share-alt"></i> <?php comment_reply_link( array_merge( $args, array( 'reply_text' => 'Responder a este comentario', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ) ;?></div>
+		</div>
+	</li><!-- end #comment -->
+			
+	<?php }
+		break;
+	endswitch;
+}
+endif; // ends check for vb_comment()
+
+
+
+
+
+// trackbacks and pingbacks counter
+function trackback_count() {
+global $wpdb;
+global $post;
+$postid = $post->ID;
+$count = "SELECT COUNT(*) FROM $wpdb->comments WHERE comment_type = 'pingback' AND comment_approved = '1' AND comment_post_ID = '$postid'";
+//$count = "SELECT COUNT(*) FROM $wpdb->comments WHERE comment_type = 'pingback'";
+$counter = $wpdb->get_var($count);
+if ( $counter == 0 ) { echo "No hay trackbacks"; }
+elseif ( $counter == 1 ) { echo "Un trackback"; }
+else { echo "$counter trackbacks"; }
+}
+
+// human comments counter
+function human_comment_count() {
+global $wpdb;
+global $post;
+$postid = $post->ID;
+$count = "SELECT COUNT(*) FROM $wpdb->comments WHERE comment_type = '' AND comment_approved = '1' AND comment_post_ID = '$postid'";
+$counter = $wpdb->get_var($count);
+if ( $counter == 0 ) { echo "No hay comentarios"; }
+elseif ( $counter == 1 ) { echo "Un comentario"; }
+else { echo "$counter comentarios"; }
+}
 ?>

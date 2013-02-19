@@ -1,3 +1,4 @@
+<ul class="unstyled span2" style="margin-top: 3px;">
 <?php // twitter ?>
 <li>
 <a href="https://twitter.com/share" class="twitter-share-button" data-lang="fr">Tweeter</a>
@@ -17,6 +18,8 @@
 <div class="fb-like" data-send="true" data-layout="button_count" data-width="144" data-show-faces="false"></div>
 </li>
 
+</ul>
+<ul class="unstyled span2" style="margin-top: 3px;">
 <?php // g+ ?>
 <!-- Place this tag where you want the +1 button to render. -->
 <li>
@@ -39,3 +42,4 @@
 <script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
 <script type="IN/Share" data-counter="right"></script>
 </li>
+</ul>
