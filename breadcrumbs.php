@@ -21,10 +21,15 @@ if ( is_front_page() ) {
 
 	<li><?php the_title(); ?></li>
 <?php // end if parent page
-} elseif ( is_single() && get_post_type( $post->ID ) == 'evento' ) {
+} elseif ( is_post_type_archive( array('evento') ) ) {
+// if eventos archive ?>
+	<li><a href="<?php echo $genvars['blogurl']; ?>">Inicio</a> <span class="divider">&rsaquo;</span></li>
+	<li>Agenda</li>
+
+<?php } elseif ( is_single() && get_post_type( $post->ID ) == 'evento' ) {
 // if evento post type ?>
 	<li><a href="<?php echo $genvars['blogurl']; ?>">Inicio</a> <span class="divider">&rsaquo;</span></li>
-	<li><a href="<?php echo $genvars['blogurl']; ?>">Calendario</a> <span class="divider">&rsaquo;</span></li>
+	<li><a href="<?php echo $genvars['blogurl']; ?>/?post_type=evento">Agenda</a> <span class="divider">&rsaquo;</span></li>
 	<li><?php the_title(); ?></li>
 
 <?php // end if evento

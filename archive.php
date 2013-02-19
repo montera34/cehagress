@@ -4,13 +4,29 @@ get_header(); ?>
 <div class="span1 filete"></div>
 
 <div id="content" class="span9">
+	<h2 class="tit2 muted">Eventos pasados</h2>
 <?php // ARCHIVE LOOP
 // if eventos list
+$today = time();
 $args = array(
 	'post_type' => 'evento',
 	'meta_key' => '_cmb_evento_fin',
 	'order' => 'ASC',
 	'orderby' => 'meta_value_num',
+	'meta_query' => array(
+		array(
+			'key' => '_cmb_evento_fin',
+			'value' => $today,
+			'type' => 'NUMERIC',
+			'compare' => '<'
+		),
+		array(
+			'key' => '_cmb_evento_fin',
+			'value' => '_wp_zero_value',
+			'compare' => '!='
+		),
+	),
+
 );
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) {

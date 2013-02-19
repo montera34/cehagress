@@ -1,5 +1,5 @@
 <div id="margen" class="span3">
-<?php // CALENDAR
+<?php // EVENTS
 //$today = date('U');
 $today = time();
 //echo $today;
@@ -25,7 +25,7 @@ $args = array(
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) { ?>
 
-	<h2 class="tit2">Calendario</h2>
+	<h2 class="tit2">Próximos eventos</h2>
 	<ul class="unstyled">
 
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post();
@@ -43,6 +43,9 @@ if ( $the_query->have_posts() ) { ?>
 			<p><?php the_excerpt_rss(); ?></p>
 		</li>
 	<?php endwhile; ?>
+		<li class="topslim">
+			<a href="?post_type=evento" title="Archivo de eventos">Eventos pasados</a>
+		</li>
 	</ul>
 <?php } else {
 	// no eventos
