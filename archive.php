@@ -1,33 +1,52 @@
 <?php
 get_header(); ?>
 
+<?php
+$pt = get_query_var('post_type');
+// if eventos post type
+if( $pt == 'evento' ) {
+	$tit = "Eventos pasados";
+	$today = time();
+	$args = array(
+		'post_type' => $pt,
+		'meta_key' => '_cmb_evento_fin',
+		'order' => 'ASC',
+		'orderby' => 'meta_value_num',
+		'meta_query' => array(
+			array(
+				'key' => '_cmb_evento_fin',
+				'value' => $today,
+				'type' => 'NUMERIC',
+				'compare' => '<'
+			),
+			array(
+				'key' => '_cmb_evento_fin',
+				'value' => '_wp_zero_value',
+				'compare' => '!='
+			),
+		),
+	);
+}
+// if comunicacion post type
+if( $pt == 'comunicacion' ) {
+	$tit = "Comunicaciones aceptadas";
+	$args = array(
+		'post_type' => $pt,
+		'meta_key' => '_cmb_comunica_lastname',
+		'order' => 'ASC',
+		'orderby' => 'meta_value',
+	);
+}
+?>
+
 <div class="span1 filete"></div>
 
 <div id="content" class="span9">
-	<h2 class="tit2 muted">Eventos pasados</h2>
+	<h2 class="tit2"><?php echo $tit ?></h2>
 <?php // ARCHIVE LOOP
 // if eventos list
-$today = time();
-$args = array(
-	'post_type' => 'evento',
-	'meta_key' => '_cmb_evento_fin',
-	'order' => 'ASC',
-	'orderby' => 'meta_value_num',
-	'meta_query' => array(
-		array(
-			'key' => '_cmb_evento_fin',
-			'value' => $today,
-			'type' => 'NUMERIC',
-			'compare' => '<'
-		),
-		array(
-			'key' => '_cmb_evento_fin',
-			'value' => '_wp_zero_value',
-			'compare' => '!='
-		),
-	),
+if( $pt == 'evento' ) {
 
-);
 // past events loop
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) {
@@ -59,8 +78,22 @@ if ( $the_query->have_posts() ) {
 
 		<?php if ( $count == 3 ) { echo "</div><!-- .row -->"; $count = 0; }
 	endwhile;
-} // end this page loop
+} // end archive loop
 			if ( $count != 0 ) { echo "</div><!-- .row -->"; }
+} // end if evento post type
+
+// if comunicaciones list
+if( $pt == 'comunicacion' ) {
+$the_query = new WP_Query( $args );
+if ( $the_query->have_posts() ) {
+	$count = 0;
+	while ( $the_query->have_posts() ) : $the_query->the_post();
+		include "loop.list.php";
+	endwhile;
+} // end archive loop
+
+
+} // end if comunicacion post type
 wp_reset_query()
 ?>
 
