@@ -56,7 +56,7 @@ if( !empty($wp_query->query_vars['s']) )
 
 echo "
 	<div id='pagination' class='row'>
-		<div class='span6 offset2'>
+		<div class='span9'>
 			<div class='pagination'>
 ";
 //echo "<ul id='navega'>";

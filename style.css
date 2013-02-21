@@ -181,15 +181,14 @@ ol.children {
 }
 
 /* archive list*/
-.list-item {
-	margin-bottom: 30px;
+.list-data {
 	padding-top: 5px;
 }
 .list-tit a {
-	color:;
 }
 .list-meta {
-
+	padding-top: 5px;
+	margin-bottom: 50px;
 }
 
 /* footer */

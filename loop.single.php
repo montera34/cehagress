@@ -28,10 +28,10 @@
 			<?php } elseif( get_post_type( $post->ID ) == 'page' ) { // if page ?>
 				<li>Contenido publicado </strong>el <strong><?php the_time('F d, Y') ?></strong></li>
 			<?php } else { // if not evento neither page ?>
-			<li>Por <strong><?php the_author_posts_link(); ?>, </strong>el <strong><?php the_time('F d, Y') ?></strong></li>
-			<li>Archivado en: <strong><?php the_category(', '); ?></strong>, <?php the_tags('<span class="tags">',', ','</span>'); ?></li>
+			<li><i class="icon-calendar"></i> <?php the_time('F d, Y') ?>, por <?php the_author_posts_link(); ?></li>
+			<li><i class="icon-tags"></i> <strong><?php the_category(', '); ?></strong><?php the_tags(', <span class="tags">',', ','</span>'); ?></li>
 			<?php } ?>
-			<li><i class="icon-comment"></i> <?php comments_popup_link('Ningún  comentarios', '1 comentarios', '% comentarios'); ?></li>
+			<li><i class="icon-comment"></i> <?php comments_popup_link('Ningún comentario', '1 comentario', '% comentarios'); ?></li>
 		</ul>
 		</div>
 		<div class="span4 art-meta-col topslim">
