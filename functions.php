@@ -49,7 +49,73 @@ function create_post_type() {
 //		'map_meta_cap' => true, // should be true to make capability_type works
 //		'capability_type' => 'page',
 	));
+	// comunicacion custom post type
+	register_post_type( 'comunicacion', array(
+		'labels' => array(
+			'name' => __( 'Comunicaciones' ),
+			'singular_name' => __( 'Comunicación' ),
+			'add_new_item' => __( 'Añadir una comunicación' ),
+			'edit' => __( 'Editar' ),
+			'edit_item' => __( 'Editar esta comunicación' ),
+			'new_item' => __( 'Nueva comunicación' ),
+			'view' => __( 'Ver comunicación' ),
+			'view_item' => __( 'Ver esta comunicación' ),
+			'search_items' => __( 'Buscar comunicaciones' ),
+			'not_found' => __( 'Ninguna comunicación encontrada' ),
+			'not_found_in_trash' => __( 'No hay comunicaciones en la papelera' ),
+			'parent' => __( 'Parent' )
+		),
+		'public' => true,
+		'publicly_queryable' => true,
+		'exclude_from_search' => false,
+		'show_ui' => true,
+		'menu_position' => 5,
+		'show_in_nav_menus' => true,
+		'has_archive' => true,
+//		'menu_icon' => get_template_directory_uri() . '/images/icon-post.type-integrantes.png',
+		'hierarchical' => false, // if true this post type will be as pages
+		'query_var' => true,
+		'supports' => array('title', 'editor','excerpt','author','comments','trackbacks'),
+		'taxonomies' => array('seccion'),
+		'rewrite' => array('slug'=>'comunicacion','with_front'=>false),
+		'can_export' => true,
+//		'_builtin' => false,
+//		'_edit_link' => 'post.php?post=%d',
+//		'map_meta_cap' => true, // should be true to make capability_type works
+//		'capability_type' => 'page',
+	));
+
 } // end function create post type
+
+// Custom Taxonomies
+add_action( 'init', 'build_taxonomies', 0 );
+
+function build_taxonomies() {
+	// SECTIONS FOR COMUNICATIONS
+	register_taxonomy( 'seccion', array('comunicacion'), array(
+		'labels' => array(
+			'name' => _x( 'Secciones para las comunicaciones','taxonomy general name' ),
+			'singular_name' => _x( 'Sección','taxonomy general name' ),		
+			'search_items' => __( 'Buscar secciones' ),
+			'popular_items' => __( 'Secciones con más comunicaciones' ),
+			'all_items' => __( 'Todas las secciones' ),
+			'parent_item' => __( 'Parent sección' ),
+			'edit_item' => __( 'Editar la sección' ),
+			'update_item' => __( 'Actualizar la sección' ),
+			'add_new_item' => __( 'Añadir una nueva sección' ),
+			'new_item_name' => __( 'Nombre de la nueva sección' ),
+//			'separate_items_with_commas' => __( 'Separate tags with commas' ),
+//			'add_or_remove_items' => __( 'Add or remove tags' ),
+//			'choose_from_most_used' => __( 'Choose from the most used tags' ),
+//			'menu_name' => 
+		),
+		'public' => true,
+		'hierarchical' => true,
+		'update_count_callback' => true,
+		'query_var' => true,
+		'rewrite' => array('slug'=>'seccion','with_front'=>false,'hierarchical'=>true)
+	));
+}
 
 // thumbnails support
 add_theme_support( 'post-thumbnails' );
@@ -174,6 +240,31 @@ function cmb_sample_metaboxes( array $meta_boxes ) {
 				'id' => $prefix . 'random_image4_pos',
 				'type' => 'text_small'
 			),
+		)
+	);
+	// comunicaciones meta data
+	// just for comunicacion post type
+	$meta_boxes[] = array(
+		'id'         => 'comunica_author',
+		'title'      => 'Sobre el autor de la comunicación',
+		'pages'      => array( 'comunicacion', ), // Post type
+		'context'    => 'side',
+		'priority'   => 'high',
+		'show_names' => false, // Show field names on the left
+		'fields'     => array(
+			array(
+				'name' => 'Apellidos',
+				'desc' => 'Apellidos',
+				'id'   => $prefix . 'comunica_lastname',
+				'type' => 'text_small',
+			),
+			array(
+				'name' => 'Nombre',
+				'desc' => 'Nombre',
+				'id'   => $prefix . 'comunica_firstname',
+				'type' => 'text_small',
+			),
+
 		)
 	);
 	// Add other metaboxes as needed
