@@ -31,7 +31,9 @@
 			<li><i class="icon-calendar"></i> <?php the_time('F d, Y') ?>, por <?php the_author_posts_link(); ?></li>
 			<li><i class="icon-tags"></i> <strong><?php the_category(', '); ?></strong><?php the_tags(', <span class="tags">',', ','</span>'); ?></li>
 			<?php } ?>
+			<?php if ( comments_open() ) { ?>
 			<li><i class="icon-comment"></i> <?php comments_popup_link('Ningún comentario', '1 comentario', '% comentarios'); ?></li>
+			<?php } ?>
 		</ul>
 		</div>
 		<div class="span4 art-meta-col topslim">
