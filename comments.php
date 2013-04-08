@@ -38,7 +38,7 @@ if ( have_comments() ) { // si la entrada tiene comentarios
 	<div class="row">
 	<div class="span5">
 		<p>Aún no hay comentarios a esta entrada.</p>
-		<p>Si tienes algo que decir, utiliza el formulario de la izquierda.</p>
+		<p>Si tienes algo que decir, utiliza el formulario de la derecha.</p>
 	</div>
 	<?php } else { // si los comentarios están cerrados
 		//echo '<p>Los comentarios están deshabilitados en esta entrada.</p>';

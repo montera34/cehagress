@@ -200,3 +200,8 @@ ol.children {
 #epi img {
 	margin: 10px 0 0 5px;
 }
+
+/* inscripcion form */
+.wpcf7 p {
+	margin: 0;
+}
