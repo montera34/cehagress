@@ -31,7 +31,8 @@ if( $pt == 'evento' ) {
 if( is_tax('seccion') ) {
 	$seccion_slug = get_query_var('seccion');
 	$seccion = get_term_by('slug',$seccion,'seccion');
-	$tit = "Sección " .$seccion->name. ": Comunicaciones aceptadas";
+	$seccion_desc = $seccion->description;
+	$tit = $seccion->name;
 	$args = array(
 		//'post_type' => $pt,
 		'post_type' => 'comunicacion',
@@ -39,6 +40,7 @@ if( is_tax('seccion') ) {
 		'meta_key' => '_cmb_comunica_lastname',
 		'order' => 'ASC',
 		'orderby' => 'meta_value',
+		'posts_per_page' => -1
 	);
 }
 ?>
@@ -88,6 +90,10 @@ if ( $the_query->have_posts() ) {
 
 // if comunicaciones list
 if( is_tax('seccion') ) {
+	echo "
+		<div>" .$seccion_desc. "</div>
+		<h3>Comunicaciones aceptadas en esta sección</h3>
+	";
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) {
 		$count = 0;

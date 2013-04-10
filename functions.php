@@ -110,6 +110,8 @@ function build_taxonomies() {
 //			'menu_name' => 
 		),
 		'public' => true,
+		'show_ui' => true,
+		'show_admin_column' => true,
 		'hierarchical' => true,
 		'update_count_callback' => true,
 		'query_var' => true,

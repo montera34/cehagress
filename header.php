@@ -106,7 +106,7 @@ wp_reset_query()
 
 	<div id="preup" class="row">
 			<div id="lema" class="span3">
-				<div class="fontup"><strong>1-4 Octubre 2014</strong></div>
+				<div class="fontup"><strong>Toledo, 1-4 Octubre 2014</strong></div>
 				<?php if ( !is_front_page() ) { ?>
 				<div id="lema-tagline" class="tit3"><em><?php echo $genvars['blogdesc']; ?></em></div>
 				<?php } ?>

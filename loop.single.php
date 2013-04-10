@@ -1,5 +1,22 @@
 <div class="art">
 	<h2 class="art-tit tit2"><?php the_title(); ?></h2>
+	<?php if ( get_post_type( $post->ID ) == 'comunicacion' ) { // if comunicacion
+		$comunica_author = "Autor: <span class='muted'>" .get_post_meta( $post->ID, '_cmb_comunica_firstname', true ). " " .get_post_meta( $post->ID, '_cmb_comunica_lastname', true ). "</span>";
+		$comunica_secs = get_the_terms( $post->ID, 'seccion');
+		foreach ( $comunica_secs as $term ) {
+			$comunica_sec_link = get_term_link($term);
+			$comunica_sec = "Sección: <a href='" .$comunica_sec_link. "'>" .$term->name. "</a>";
+		}
+		$comunica_desc = "Resumen: <p class='muted'>" .get_the_excerpt(). "</p>";
+	?>
+	<div class="art-text bottomslim">
+		<ul class="unstyled">
+			<li><i class="icon-user"></i> <?php echo $comunica_author; ?></li>
+			<li><i class="icon-tags"></i> <?php echo $comunica_sec; ?></li>
+			<li><i class="icon-align-left"></i> <?php echo $comunica_desc; ?></li>
+		</ul>
+	</div><!-- .art-text -->
+	<?php } // end if comunicacion ?>
 	<div class="art-text">
 		<?php the_content();
 		wp_link_pages( array( 'before' => '<section><div class="art-nav">P&aacute;ginas: ', 'after' => '</div></section>' ) ); ?>
@@ -25,7 +42,7 @@
 					}
 				} ?>
 				</li>
-			<?php } elseif( get_post_type( $post->ID ) == 'page' ) { // if page ?>
+			<?php } elseif( get_post_type( $post->ID ) == 'page' || get_post_type( $post->ID ) == 'comunicacion' ) { // if page ?>
 			<?php } else { // if not evento neither page ?>
 			<li><i class="icon-calendar"></i> <?php the_time('F d, Y') ?>, por <?php the_author_posts_link(); ?></li>
 			<li><i class="icon-tags"></i> <strong><?php the_category(', '); ?></strong><?php the_tags(', <span class="tags">',', ','</span>'); ?></li>
