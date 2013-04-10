@@ -28,10 +28,14 @@ if( $pt == 'evento' ) {
 	);
 }
 // if comunicacion post type
-if( $pt == 'comunicacion' ) {
-	$tit = "Comunicaciones aceptadas";
+if( is_tax('seccion') ) {
+	$seccion_slug = get_query_var('seccion');
+	$seccion = get_term_by('slug',$seccion,'seccion');
+	$tit = "Sección " .$seccion->name. ": Comunicaciones aceptadas";
 	$args = array(
-		'post_type' => $pt,
+		//'post_type' => $pt,
+		'post_type' => 'comunicacion',
+		'seccion' => $seccion_slug,
 		'meta_key' => '_cmb_comunica_lastname',
 		'order' => 'ASC',
 		'orderby' => 'meta_value',
@@ -83,7 +87,7 @@ if ( $the_query->have_posts() ) {
 } // end if evento post type
 
 // if comunicaciones list
-if( $pt == 'comunicacion' ) {
+if( $pt == 'comunicacion' || is_tax('seccion') ) {
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) {
 	$count = 0;

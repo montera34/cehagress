@@ -186,7 +186,8 @@ ol.children {
 }
 .list-tit a {
 }
-.list-meta {
+.list-meta,
+.tax-seccion {
 	padding-top: 5px;
 	margin-bottom: 50px;
 }
