@@ -27,22 +27,56 @@ if( $pt == 'evento' ) {
 		),
 	);
 }
-// if comunicacion post type
-if( is_tax('seccion') ) {
-	$seccion_slug = get_query_var('seccion');
-	$seccion = get_term_by('slug',$seccion,'seccion');
-	$seccion_desc = $seccion->description;
-	$tit = $seccion->name;
+
+// if seccion tax of comunication post type
+if( is_tax('seccion') || $pt == 'comunicacion' ) {
+	$comunica_orderby = sanitize_text_field( $_GET['by'] );
+	if ( $comunica_orderby == '' ) { $comunica_orderby = 'meta_value'; }
 	$args = array(
-		//'post_type' => $pt,
 		'post_type' => 'comunicacion',
-		'seccion' => $seccion_slug,
-		'meta_key' => '_cmb_comunica_lastname',
 		'order' => 'ASC',
-		'orderby' => 'meta_value',
+		'orderby' => $comunica_orderby,
 		'posts_per_page' => -1
 	);
-}
+	if ( $comunica_orderby == 'meta_value' ) {
+		$arg = array('meta_key' => '_cmb_comunica_lastname');
+		array_push_associative($args,$arg);
+	}
+	if( is_tax('seccion') ) { // if seccion tax
+		$seccion_slug = get_query_var('seccion');
+		$seccion = get_term_by('slug',$seccion_slug,'seccion');
+		$seccion_desc = $seccion->description;
+		$base_url = get_term_link($seccion);
+		$tit = $seccion->name;
+		$arg = array('seccion' => $seccion_slug);
+		array_push_associative($args,$arg);
+	}
+	if( $pt == 'comunicacion' ) { // if comunicacion post type: all posts
+		$base_url = get_post_type_archive_link( $pt );
+		$tit = "Comunicaciones aceptadas para el Congreso";
+	}
+	preg_match('/\?/',$base_url,$matches); // check if pretty permalinks enabled
+	if ( $matches[0] == "?" ) { // if no pretty permalinks
+		$base_url = $base_url."&by=";
+	} elseif ( $matches[0] != "?" ) { // if pretty permalinks
+		$base_url = $base_url."?by=";
+	}
+//	preg_match('/\?/',$base_url,$matches); // recheck after add vis var
+//	if ( $matches[0] == "?" ) { $param_url = "&order="; }
+//	else { $param_url = "?order="; }
+	$comunica_buttons = array(
+		array(
+			'orderby' => 'title',
+			'label' => 'Título',
+			'url' => $base_url.'title'
+		),
+		array(
+			'orderby' => 'meta_value',
+			'label' => 'Autor',
+			'url' => $base_url.'meta_value'
+		)
+	);
+} // end if comunicacion post type or seccion tax
 ?>
 
 <div class="span1 filete"></div>
@@ -89,13 +123,33 @@ if ( $the_query->have_posts() ) {
 } // end if evento post type
 
 // if comunicaciones list
-if( is_tax('seccion') ) {
-	echo "
-		<div>" .$seccion_desc. "</div>
-		<h3>Comunicaciones aceptadas en esta sección</h3>
-	";
+if( is_tax('seccion') || $pt == 'comunicacion' ) {
+	if( is_tax('seccion') ) {
+		echo "
+			<div>" .$seccion_desc. "</div>
+		";
+	}
 	$the_query = new WP_Query( $args );
 	if ( $the_query->have_posts() ) {
+		$comunica_count = $the_query->found_posts. " comunicaciones";
+		$controls = array();
+		foreach ( $comunica_buttons as $button ) {
+			if ( $comunica_orderby == $button['orderby'] ) {
+				$controls[] = "<a class='btn btn-mini disabled' href='" .$button['url']. "'>" .$button['label']. "</a>";
+			} else {
+				$controls[] = "<a class='btn btn-mini' href='" .$button['url']. "'>" .$button['label']. "</a>";
+			}
+		}
+//		$secciones = get_terms("seccion"); print_r($secciones);
+//		foreach ( $secciones as $sec ) {
+//			$term_link = get_term_link($sec);
+//			$controls[] = "<a class='btn btn-mini' href='" .$term_link. "'>" .$sec->name. "</a>";
+//		}
+		echo "<div class='list-controls topslim'><p>" .$comunica_count. "</p><ul class='inline'><li style='padding-left: 0;'>Ordenar comunicaciones por: </li>";
+		foreach ( $controls as $control ) {
+			echo "<li>" .$control. "</li>";
+		}
+		echo "</ul></div>";
 		$count = 0;
 		while ( $the_query->have_posts() ) : $the_query->the_post();
 			include "loop.list.php";

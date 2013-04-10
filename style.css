@@ -191,6 +191,11 @@ ol.children {
 	padding-top: 5px;
 	margin-bottom: 50px;
 }
+.list-controls {
+	background-color: #eee;
+	padding: 5px;
+	margin: 50px 0 20px 0;
+}
 
 /* footer */
 #epi {
