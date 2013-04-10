@@ -26,7 +26,6 @@
 				} ?>
 				</li>
 			<?php } elseif( get_post_type( $post->ID ) == 'page' ) { // if page ?>
-				<li>Contenido publicado </strong>el <strong><?php the_time('F d, Y') ?></strong></li>
 			<?php } else { // if not evento neither page ?>
 			<li><i class="icon-calendar"></i> <?php the_time('F d, Y') ?>, por <?php the_author_posts_link(); ?></li>
 			<li><i class="icon-tags"></i> <strong><?php the_category(', '); ?></strong><?php the_tags(', <span class="tags">',', ','</span>'); ?></li>

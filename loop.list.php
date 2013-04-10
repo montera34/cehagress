@@ -20,7 +20,6 @@
 		?>
 		<ul class="inline muted">
 				<li style="padding-left: 0;"><i class="icon-user"></i> <?php echo $comunica_author; ?></li>
-				<li><i class="icon-tags"></i> <?php echo $comunica_sec; ?></li>
 		</ul>
 		<?php } // end if tax seccion ?>
 		<div class="list-text">

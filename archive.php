@@ -87,16 +87,16 @@ if ( $the_query->have_posts() ) {
 } // end if evento post type
 
 // if comunicaciones list
-if( $pt == 'comunicacion' || is_tax('seccion') ) {
-$the_query = new WP_Query( $args );
-if ( $the_query->have_posts() ) {
-	$count = 0;
-	while ( $the_query->have_posts() ) : $the_query->the_post();
-		include "loop.list.php";
-	endwhile;
-} // end archive loop
-
-
+if( is_tax('seccion') ) {
+	$the_query = new WP_Query( $args );
+	if ( $the_query->have_posts() ) {
+		$count = 0;
+		while ( $the_query->have_posts() ) : $the_query->the_post();
+			include "loop.list.php";
+		endwhile;
+	} else {
+		echo "<p>Aún no hay ninguna comunicación aceptada en esta sección.</p>";
+	} // end archive loop
 } // end if comunicacion post type
 wp_reset_query()
 ?>
