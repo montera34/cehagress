@@ -1,4 +1,20 @@
 <?php
+// Append associative array elements
+function array_push_associative(&$arr) {
+   $args = func_get_args();
+   foreach ($args as $arg) {
+       if (is_array($arg)) {
+           foreach ($arg as $key => $value) {
+               $arr[$key] = $value;
+               $ret++;
+           }
+       }else{
+           $arr[$arg] = "";
+       }
+   }
+   return $ret;
+}
+
 // custom menus
 add_action( 'init', 'register_my_menu' );
 function register_my_menu() {
