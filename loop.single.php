@@ -44,7 +44,7 @@
 				</li>
 			<?php } elseif( get_post_type( $post->ID ) == 'page' || get_post_type( $post->ID ) == 'comunicacion' ) { // if page ?>
 			<?php } else { // if not evento neither page ?>
-			<li><i class="icon-calendar"></i> <?php the_time('F d, Y') ?>, por <?php the_author_posts_link(); ?></li>
+			<li><i class="icon-calendar"></i> <?php the_date() ?>, por <?php the_author_posts_link(); ?></li>
 			<li><i class="icon-tags"></i> <strong><?php the_category(', '); ?></strong><?php the_tags(', <span class="tags">',', ','</span>'); ?></li>
 			<?php } ?>
 			<?php if ( comments_open() ) { ?>
