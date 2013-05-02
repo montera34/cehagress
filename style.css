@@ -32,16 +32,16 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	text-transform: uppercase;
 }
 .topslim {
-	border-top: 1px solid #ccc;
+	border-top: 1px solid;
 	padding-top: 5px;
 }
 .bottomslim {
-	border-bottom: 1px solid #ccc;
+	border-bottom: 1px solid;
 	padding-bottom: 5px;
 }
 .topfat,
 #pre-menu > li {
-	border-top: 10px solid #000;
+	border-top: 10px solid;
 	padding-top: 5px;
 }
 
@@ -205,6 +205,10 @@ ol.children {
 }
 #epi img {
 	margin: 10px 0 0 5px;
+}
+#epi a {
+	color: white;
+	font-weight: bold;
 }
 
 /* inscripcion form */

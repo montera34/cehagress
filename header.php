@@ -56,7 +56,7 @@ wp_head(); ?>
 // @purple + @green
 // @darkblue + @gold
 // @olive + @bluesea
-$colors = array('red_blue','purple_green','darkblue_gold','olive_bluesea');
+$colors = array('red blue red_blue','purple green purple_green','darkblue gold darkblue_gold','olive bluesea olive_bluesea');
 $color_key = array_rand($colors, 1);
 $color_class = $colors[$color_key];
 
@@ -118,7 +118,7 @@ wp_reset_query()
 			</div><!-- #banner -->
 	</div><!-- #preup -->
 	<div id="predown" class="row">
-			<div id="logo" class="span3" style="<?php echo "background-image: url('" .$genvars['blogtheme']. "/images/logo-" .$color_class. ".png')"; ?>">
+			<div id="logo" class="span3">
 				<a href="<?php echo $genvars['blogurl']; ?>"><h1><?php echo $genvars['blogname']; ?></h1></a>
 			</div><!-- #logo -->
 			<div id="navega" class="span9">
