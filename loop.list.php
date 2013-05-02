@@ -36,9 +36,6 @@
 <div class="row">
 	<div class="span9 list-meta">
 		<ul class="inline muted">
-				<li style="padding-left: 0;"><i class="icon-user"></i> <?php echo $comunica_author; ?></li>
-				<li><i class="icon-tags"></i> <?php echo $comunica_sec; ?></li>
-
 				<li style="padding-left: 0;"><i class="icon-calendar"></i> <?php the_time('F d, Y') ?>, por <?php the_author_posts_link(); ?></li>
 				<?php if ( comments_open() ) { ?>
 				<li><i class="icon-comment"></i> <?php comments_popup_link('Ningún comentario', '1 comentario', '% comentarios'); ?></li>

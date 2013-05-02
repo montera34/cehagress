@@ -79,7 +79,7 @@ if( is_tax('seccion') || $pt == 'comunicacion' ) {
 } // end if comunicacion post type or seccion tax
 ?>
 
-<div class="span1 filete"></div>
+<div class="span1 filete topfat"></div>
 
 <div id="content" class="span9">
 	<h2 class="tit2"><?php echo $tit ?></h2>

@@ -2,7 +2,7 @@
 get_header(); ?>
 
 <?php if ( !is_front_page() ) { ?>
-	<div class="span1 filete"></div>
+	<div class="span1 filete topfat"></div>
 <?php } ?>
 
 <div id="content" class="span9">

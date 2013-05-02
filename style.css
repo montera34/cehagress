@@ -39,6 +39,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	border-bottom: 1px solid #ccc;
 	padding-bottom: 5px;
 }
+.topfat,
+#pre-menu > li {
+	border-top: 10px solid #000;
+	padding-top: 5px;
+}
 
 /* header */
 #preup {
@@ -87,8 +92,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
         list-style-type: none;
         display: inline-block;
         margin-right: 10px;
-	padding: 5px 0 10px;
-	border-top: 10px solid;
+	padding-bottom: 10px;
 }
 .current_page_item,
 .current-menu-ancestor {
@@ -136,16 +140,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
 /* sidebar */
 #margen {
-	border-top: 10px solid;
 	margin-top: 10px;
-	padding-top: 5px;
 }
 
 /* content */
 .filete {
-	border-top: 10px solid;
 	margin-top: 10px;
-	margin-bottom: 5px;
 	height: 0!important;
 	min-height: 0!important;
 }

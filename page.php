@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="span1 filete"></div>
+<div class="span1 filete topfat"></div>
 <div id="content" class="span9">
 
 <?php // THIS PAGE LOOP
