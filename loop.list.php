@@ -9,7 +9,7 @@
 		<div class="span6">
 		<?php } ?>
 
-		<h3 class="list-tit tit3 fontup"><a class="" href="<?php the_permalink() ?>" rel="bookmark" title="Enlace permanente a <?php the_title(); ?>"><?php the_title(); ?></a></h3>
+		<h3 class="list-tit tit3 fontup"><a href="<?php the_permalink() ?>" rel="bookmark" title="Enlace permanente a <?php the_title(); ?>"><?php the_title(); ?></a></h3>
 		<?php if ( is_tax('seccion') ) { // if tax seccion of comunicacion post type
 			$comunica_author = "Autor: <strong>" .get_post_meta( $post->ID, '_cmb_comunica_firstname', true ). " " .get_post_meta( $post->ID, '_cmb_comunica_lastname', true ). "</strong>";
 			$comunica_secs = get_the_terms( $post->ID, 'seccion');

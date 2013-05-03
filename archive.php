@@ -126,7 +126,7 @@ if ( $the_query->have_posts() ) {
 if( is_tax('seccion') || $pt == 'comunicacion' ) {
 	if( is_tax('seccion') ) {
 		echo "
-			<div>" .$seccion_desc. "</div>
+			<div class='art-text'>" .$seccion_desc. "</div>
 		";
 	}
 	$the_query = new WP_Query( $args );
