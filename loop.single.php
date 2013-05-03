@@ -38,7 +38,7 @@
 						$evento_inicio_human = date("d/m/Y", $evento_inicio);
 						echo "Desde el " .$evento_inicio_human. " hasta el " .$evento_fin_human. ".";
 					} else {
-						echo "Caducó el " .$evento_fin_human. ".";
+						echo "Hasta el " .$evento_fin_human. ".";
 					}
 				} ?>
 				</li>
