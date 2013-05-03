@@ -11,6 +11,8 @@
 @olive: #888e29;
 @bluesea: #678399;
 
+// responsive
+
 //.setColor(@color) {
 //    (~"body.@{color}") { background-color: ~"@{@{color}}";
 //        #container { background-color: ~"@{@{color}}";
@@ -70,8 +72,20 @@
 	}
 	
 	body.@{color}_@{color2} {
-		#logo
-		{ background-image: url('images/logo-@{color}_@{color2}.png'); }
+		#logo {
+			@media (min-width: 1200px) {
+				background-image: url('images/logo-@{color}_@{color2}-270.png');
+				height: 102px;
+			}
+			@media (min-width: 979px) and (max-width: 1199px) {
+				background-image: url('images/logo-@{color}_@{color2}.png');
+				height: 85px;
+			}
+			@media (min-width: 768px) and (max-width: 978px) {
+				background-image: url('images/logo-@{color}_@{color2}-166.png');
+				height: 67px;
+			}
+		}
 	}
 }
 

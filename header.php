@@ -93,7 +93,7 @@ if ( $random_query->have_posts() ) {
 		if ( count($imgs_src > 0 ) ) { $rand_img = array_rand($imgs_src, 1); }
 		global $random_img_home;
 		$random_img_home = "<img src='" .$imgs_src[$rand_img]. "' alt='" .$genvars['blogname']. " -- " .$genvars['blogdesc']. "' />";
-		$random_img_pre = "<div style='height: 75px; text-indent: -9999px; background-image: url(" .$imgs_src[$rand_img]. "); background-repeat: no-repeat; background-position: 0 -" .$imgs_pos[$rand_img]. "px;'>" .$genvars['blogname']. " -- " .$genvars['blogdesc']. "</div>";
+		$random_img_pre = "<div class='hidden-phone' style='height: 75px; text-indent: -9999px; background-image: url(" .$imgs_src[$rand_img]. "); background-repeat: no-repeat; background-position: 0 -" .$imgs_pos[$rand_img]. "px;'>" .$genvars['blogname']. " -- " .$genvars['blogdesc']. "</div>";
 	endwhile;
 }
 wp_reset_query()
@@ -118,7 +118,8 @@ wp_reset_query()
 			</div><!-- #banner -->
 	</div><!-- #preup -->
 	<div id="predown" class="row">
-			<div id="logo" class="span3">
+			<a class="visible-phone" href="<?php echo $genvars['blogurl']; ?>"><h1><?php echo $genvars['blogname']; ?></h1></a>
+			<div id="logo" class="span3 hidden-phone">
 				<a href="<?php echo $genvars['blogurl']; ?>"><h1><?php echo $genvars['blogname']; ?></h1></a>
 			</div><!-- #logo -->
 			<div id="navega" class="span9">
