@@ -139,7 +139,7 @@ function build_taxonomies() {
 
 // thumbnails support
 add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( "220", "220" );
+set_post_thumbnail_size( "270", "270" );
 
 // CUSTOM META BOXES (using cmb lib) FOR CREATION CUSTOM STYLES
 // see lib/metabox/example-functions.php for more info
