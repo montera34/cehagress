@@ -23,7 +23,7 @@ $args = array(
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) { ?>
 
-	<h2 class="tit2 topfat">Próximos eventos</h2>
+	<h2 class="tit2 topfat">Agenda</h2>
 	<ul class="unstyled">
 
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post();
@@ -53,8 +53,9 @@ wp_reset_postdata(); ?>
 $args = array(
 	'parent' => '0',
 	'orderby' => 'id',
+	'order' => 'ASC',
 );
-$news_cats = get_terms('category');
+$news_cats = get_terms('category',$args);
 foreach ( $news_cats as $term ) {
 	$term_name = $term->name;
 	$term_link = get_term_link( $term );
