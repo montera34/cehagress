@@ -41,7 +41,7 @@ if ( $the_query->have_posts() ) { ?>
 		include "loop.sidebar.php";
 	endwhile; ?>
 		<li class="topslim">
-			<a href="/?post_type=evento" title="Archivo de eventos">Eventos pasados</a>
+			<strong><a href="/?post_type=evento" title="Archivo de eventos">Eventos pasados</a></strong>
 		</li>
 	</ul>
 <?php } else {
@@ -51,13 +51,22 @@ wp_reset_postdata(); ?>
 
 <?php // NEWS
 $args = array(
+	'parent' => '0',
+	'orderby' => 'id',
+);
+$news_cats = get_terms('category');
+foreach ( $news_cats as $term ) {
+	$term_name = $term->name;
+	$term_link = get_term_link( $term );
+$args = array(
 	'post_type' => 'post',
-	'posts_per_page' => 5,
+	'posts_per_page' => 3,
+	'cat' => $term->term_id,
 );
 $the_query = new WP_Query( $args );
 if ( $the_query->have_posts() ) { ?>
 
-	<h2 class="tit2 topfat">Últimas noticias</h2>
+	<h2 class="tit2 topfat"><?php echo $term_name; ?></h2>
 	<ul class="unstyled">
 
 	<?php while ( $the_query->have_posts() ) : $the_query->the_post();
@@ -67,13 +76,15 @@ if ( $the_query->have_posts() ) { ?>
 
 	<?php endwhile; ?>
 		<li class="topslim">
-			<a href="/archivo-de-noticias" title="Archivo de noticias">Noticias anteriores</a>
+			<strong><a href="<?php echo $term_link ?>" title="Archivo de noticias de la sección <?php echo $term_name; ?>">Más noticas en esta sección</a></strong><br /><a href="/archivo-de-noticias" title="Archivo de noticias">Archivo de todas las secciones</a>
 		</li>
 	</ul>
 <?php } else {
 	// no news
 }
-wp_reset_postdata(); ?>
+wp_reset_postdata();
+
+} // end foreach news categories ?>
 
 
 </div><!-- #sidebar -->
