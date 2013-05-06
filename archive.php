@@ -29,7 +29,7 @@ if( $pt == 'evento' ) {
 }
 
 // if seccion tax of comunication post type
-if( is_tax('seccion') || $pt == 'comunicacion' ) {
+elseif( is_tax('seccion') || $pt == 'comunicacion' ) {
 	$comunica_orderby = sanitize_text_field( $_GET['by'] );
 	if ( $comunica_orderby == '' ) { $comunica_orderby = 'meta_value'; }
 	$args = array(
@@ -77,6 +77,14 @@ if( is_tax('seccion') || $pt == 'comunicacion' ) {
 		)
 	);
 } // end if comunicacion post type or seccion tax
+
+else {
+	$tit = single_cat_title('',FALSE);
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$args = array(
+		'post_type' => $pt,
+	);
+}
 ?>
 
 <div class="span1 filete topfat"></div>
@@ -123,7 +131,7 @@ if ( $the_query->have_posts() ) {
 } // end if evento post type
 
 // if comunicaciones list
-if( is_tax('seccion') || $pt == 'comunicacion' ) {
+elseif( is_tax('seccion') || $pt == 'comunicacion' ) {
 	if( is_tax('seccion') ) {
 		echo "
 			<div class='art-text'>" .$seccion_desc. "</div>
@@ -158,6 +166,18 @@ if( is_tax('seccion') || $pt == 'comunicacion' ) {
 		echo "<p>Aún no hay ninguna comunicación aceptada en esta sección.</p>";
 	} // end archive loop
 } // end if comunicacion post type
+
+else {
+	$the_query = new WP_Query( $args );
+	if ( $the_query->have_posts() ) :
+		while ( $the_query->have_posts() ) : $the_query->the_post();
+			include "loop.list.php";
+		endwhile;
+	include "navigation.php";
+	else :
+	// if no news, code in here
+	endif;
+}
 wp_reset_query()
 ?>
 
