@@ -33,6 +33,8 @@ require_once( get_stylesheet_directory(). '/general-vars.php' );
 
 </div><!-- #super -->
 
+<!-- Bootstrap JS: compiled and minified -->
+    <script src="<?php echo $genvars['blogtheme']; ?>/js/bootstrap.min.js"></script>
 <?php wp_footer(); ?>
 </body>
 </html>

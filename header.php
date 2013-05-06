@@ -122,17 +122,30 @@ wp_reset_query()
 			<div id="logo" class="span3 hidden-phone">
 				<a href="<?php echo $genvars['blogurl']; ?>"><h1><?php echo $genvars['blogname']; ?></h1></a>
 			</div><!-- #logo -->
-			<div id="navega" class="span9">
+			<div id="navega" class="span9 navbar">
+				<div class="navbar-inner">
+					<div class="container">
+						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</a>
+						<div class="nav-collapse">
 					<?php // main navigation menu for home page
 		                        $menu_slug = "header-menu";
 		                        $args = array(
 		                                'theme_location' => $menu_slug,
 		                                'container' => 'false',
 		                                'menu_id' => 'pre-menu',
-		                                'menu_class' => 'menu',
+		                                'menu_class' => 'nav',
+						'fallback_cb' => 'wp_page_menu',
+						'walker' => new twitter_bootstrap_nav_walker()
 		                        );
 		                        wp_nav_menu( $args );
 		                        ?>
+						</div><!-- .nav-collapse -->
+					</div><!-- .container -->
+				</div><!-- .navbar-inner -->
 			</div><!-- #navega -->
 			<div id="breadcrumbs" class="span9">
 				<?php include "breadcrumbs.php"; ?>

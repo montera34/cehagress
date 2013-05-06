@@ -83,6 +83,47 @@ Use it to make something cool, have fun, and share what you've learned with othe
 #navega {
 	border-bottom: 1px solid;
 }
+.navbar-inner {
+	padding-left: 0;
+	padding-right: 0;
+	border: none;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+.navbar .nav {
+	margin: 0;
+}
+.navbar .nav > li {
+	margin-right: 10px;
+}
+.navbar .nav > li > a {
+	padding: 0 0 10px 0;
+	text-shadow: none;
+}
+.navbar .nav li.dropdown.active>.dropdown-toggle,
+.navbar .nav>.active>a, .navbar .nav>.active>a:hover, .navbar .nav>.active>a:focus {
+	background-color: #eee;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+.dropdown-menu {
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+	border-radius: 0;
+	-moz-border-radius: 0;
+	-webkit-border-radius: 0;
+	border: none;
+	border-top: 1px solid transparent;
+}
+.navbar .nav>li>.dropdown-menu:after {
+	border-bottom: none;
+}
+/*
 #pre-menu {
         margin: 0 !important;
         display: inline-block;
@@ -93,11 +134,13 @@ Use it to make something cool, have fun, and share what you've learned with othe
         margin-right: 10px;
 	padding-bottom: 10px;
 }
+*/
 .current_page_item,
 .current-menu-ancestor {
 	background-color: #eee;
 }
 /* header menu desplegable */
+/*
 #pre-menu li a {
         display: block!important;
         display: block;
@@ -136,6 +179,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	border: none;
 	background-color: #eee;
 }
+*/
 
 /* sidebar */
 #margen {

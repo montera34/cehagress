@@ -26,6 +26,8 @@ function register_my_menu() {
                 );
         }
 }
+// Register Custom Navigation Walker
+require_once('wp-bootstrap-navwalker-master/twitter_bootstrap_nav_walker.php');
 
 // CUSTOM POST TYPES
 add_action( 'init', 'create_post_type', 0 );
