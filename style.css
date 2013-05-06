@@ -97,6 +97,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .navbar .nav > li {
 	margin-right: 10px;
 }
+.navbar .nav > li:hover {
+	background-color: #eee;
+}
 .navbar .nav > li > a {
 	padding: 0 0 10px 0;
 	text-shadow: none;
