@@ -14,7 +14,7 @@ require_once( get_stylesheet_directory(). '/general-vars.php' );
 			<div class="span3">
 			<h3 class="tit3">Contacto:</h3>
 			<p><i class="icon-envelope icon-white"></i> <small>congreso.cehaxx@uclm.es</small></p>
-			<p><i class="icon-plus-sign icon-white"></i> <small>Facebook</small> | <small>Twitter</small></p>
+			<p><i class="icon-plus-sign icon-white"></i> <a href="https://www.facebook.com/XxCongresoNacionalDeHistoriaDelArte"><small>Facebook</small></a> | <a href="https://twitter.com/xxcongresoceha"><small>Twitter</small></a></p>
 			</div>
 			<div class="span2 offset2">
 			<h3 class="tit3">Créditos:</h3>
