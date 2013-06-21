@@ -10,10 +10,11 @@ require_once( get_stylesheet_directory(). '/general-vars.php' );
 			<h3 class="tit3" style="margin-left: 5px;">Organizadores:</h3>	
 			<p><a href="http://www.arteceha.com/CEHA/ceha.html" title="Comité Español de Historia del Arte"><img src="<?php echo $genvars['blogtheme']; ?>/images/organiza.ceha.png" alt="Comité Español de Historia del Arte" /></a></p>
 			<p><a href="http://uclm.es" title="Universidad de Castilla- La Mancha"><img src="<?php echo $genvars['blogtheme']; ?>/images/organiza.uclm.png" alt="Universidad de Castilla- La Mancha" /></a></p>
+			<p><a href="http://uclm.es/ceclm" title="Centro de Estudios de Castilla- La Mancha"><img src="<?php echo $genvars['blogtheme']; ?>/images/organiza.cecla.png" alt="Centro de Estudios de Castilla- La Mancha" /></a></p>
 			</div>
 			<div class="span3">
 			<h3 class="tit3">Contacto:</h3>
-			<p><i class="icon-envelope icon-white"></i> <small>congreso.cehaxx@uclm.es</small></p>
+			<p><i class="icon-envelope icon-white"></i> <a href="/informacion-practica/contacto/"><small>Envíanos un correo</small></a></p>
 			<p><i class="icon-plus-sign icon-white"></i> <a href="https://www.facebook.com/XxCongresoNacionalDeHistoriaDelArte"><small>Facebook</small></a> | <a href="https://twitter.com/xxcongresoceha"><small>Twitter</small></a></p>
 			</div>
 			<div class="span2 offset2">
