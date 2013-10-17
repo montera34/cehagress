@@ -14,7 +14,7 @@ require_once( get_stylesheet_directory(). '/general-vars.php' );
 			</div>
 			<div class="span2">
 			<h3 class="tit3">Colaboradores:</h3>	
-			<p><a href="http://www.cajarural.com" title="Caja Rural"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.crural.png" alt="Caja Rural" /></a></p>
+			<p><a href="http://www.uclm.es/organos/vic_empresas/catedras.asp?op=5" title="Cátedras Universidad-Empresa -- Universidad de Castilla- La Mancha"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.crural.png" alt="Cátedras Universidad-Empresa -- Universidad de Castilla- La Mancha" /></a></p>
 			</div>
 			<div class="span3">
 			<h3 class="tit3">Contacto:</h3>
