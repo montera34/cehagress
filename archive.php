@@ -26,6 +26,7 @@ if( $pt == 'evento' ) {
 			),
 		),
 	);
+
 }
 
 // if seccion tax of comunication post type
@@ -80,7 +81,8 @@ elseif( is_tax('seccion') || $pt == 'comunicacion' ) {
 
 else {
 	$tit = single_cat_title('',FALSE);
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	if ( $paged > 1 ) { $args['paged'] = $paged; }
+	//$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args = array(
 		'post_type' => $pt,
 	);

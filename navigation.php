@@ -10,8 +10,14 @@ global $wp_rewrite;
 //$current_cat = $query_cat;
 //$current_cat_name = get_query_var('category_name');
 //$current_cat_name = get_categories("include=$current_cat");
-$news_query->query_vars['paged'] > 1 ? $current = $news_query->query_vars['paged'] : $current = 1;
-$total_pages = $news_query->max_num_pages;
+if ( is_archive() )  {
+	$the_query->query_vars['paged'] > 1 ? $current = $the_query->query_vars['paged'] : $current = 1;
+	$total_pages = $the_query->max_num_pages;
+} else {
+	$wp_query->query_vars['paged'] > 1 ? $current = $wp_query->query_vars['paged'] : $current = 1;
+	$total_pages = $wp_query->max_num_pages;
+}
+
 //$authors->query_vars['paged'] > 1 ? $current = $authors->query_vars['paged'] : $current = 1;
 //$current_uri = $_SERVER['REQUEST_URI'];
 
