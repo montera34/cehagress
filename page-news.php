@@ -30,6 +30,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
 	'post_type' => 'post'
 );
+if ( $paged > 1 ) { $args['paged'] = $paged; }
 
 $news_query = new WP_Query( $args );
 if ( $news_query->have_posts() ) :

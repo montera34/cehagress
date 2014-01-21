@@ -81,11 +81,11 @@ elseif( is_tax('seccion') || $pt == 'comunicacion' ) {
 
 else {
 	$tit = single_cat_title('',FALSE);
-	if ( $paged > 1 ) { $args['paged'] = $paged; }
-	//$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$args = array(
 		'post_type' => $pt,
 	);
+	if ( $paged > 1 ) { $args['paged'] = $paged; }
 }
 ?>
 
