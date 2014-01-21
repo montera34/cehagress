@@ -10,10 +10,10 @@ require_once( get_stylesheet_directory(). '/general-vars.php' );
 			<h3 class="tit3" style="margin-left: 5px;">Organizadores:</h3>	
 			<p><a href="http://www.arteceha.com/CEHA/ceha.html" title="Comité Español de Historia del Arte"><img src="<?php echo $genvars['blogtheme']; ?>/images/organiza.ceha.png" alt="Comité Español de Historia del Arte" /></a></p>
 			<p><a href="http://uclm.es" title="Universidad de Castilla- La Mancha"><img src="<?php echo $genvars['blogtheme']; ?>/images/organiza.uclm.png" alt="Universidad de Castilla- La Mancha" /></a></p>
-			<p><a href="http://uclm.es/ceclm" title="Centro de Estudios de Castilla- La Mancha"><img src="<?php echo $genvars['blogtheme']; ?>/images/organiza.ceclm.png" alt="Centro de Estudios de Castilla- La Mancha" /></a></p>
 			</div>
 			<div class="span2">
 			<h3 class="tit3">Colaboradores:</h3>	
+			<p><a href="http://uclm.es/ceclm" title="Centro de Estudios de Castilla- La Mancha"><img src="<?php echo $genvars['blogtheme']; ?>/images/organiza.ceclm.png" alt="Centro de Estudios de Castilla- La Mancha" /></a></p>
 			<p><a href="http://www.uclm.es/organos/vic_empresas/catedras.asp?op=5" title="Cátedras Universidad-Empresa -- Universidad de Castilla- La Mancha"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.crural.png" alt="Cátedras Universidad-Empresa -- Universidad de Castilla- La Mancha" /></a></p>
 			</div>
 			<div class="span3">
