@@ -245,15 +245,12 @@ ol.children {
 
 /* footer */
 #epi {
-	color: #fff;
-	min-height: 100px;
 	margin-top: 50px;
 }
 #epi img {
-	margin: 10px 0 0 5px;
+	margin: 10px 20px 30px 0;
 }
 #epi a {
-	color: white;
 	font-weight: bold;
 }
 
