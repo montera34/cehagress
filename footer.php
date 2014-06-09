@@ -16,7 +16,7 @@ require_once( get_stylesheet_directory(). '/general-vars.php' );
 			<div class="span5">
 			<h3 class="tit3">Patrocinador:</h3>	
 			<ul class="inline">
-				<li><img src="<?php echo $genvars['blogtheme']; ?>/images/patrocina.greco.2014.png" alt="El Greco 2014" /></li>
+				<li><a href="http://www.elgreco2014.com/"><img src="<?php echo $genvars['blogtheme']; ?>/images/patrocina.greco.2014.png" alt="El Greco 2014" /></a></li>
 			</ul>
 			</div>
 		</div>
@@ -24,17 +24,17 @@ require_once( get_stylesheet_directory(). '/general-vars.php' );
 			<div class="span9">
 			<h3 class="tit3">Colaboradores:</h3>	
 			<ul class="inline">
-				<li><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.ayuntamiento.toledo.png" alt="Ayuntamiento de Toledo" title="Ayuntamiento de Toledo" /></li>
-				<li><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.junta.castilla.la.mancha.png" alt="Junta de Comunidades de Castilla- La Mancha" title="Junta de Comunidades de Castilla- La Mancha" /></li>
-				<li><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.ministerio.cultura.png" alt="Ministerio de Cultura y Deporte" title="Ministerio de Cultura y Deporte" /></li>
-				<li><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.consorcio.toledo.png" alt="Consorcio de Toledo" title="Consorcio de Toledo" /></li>
-				<li><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.arzobispado.toledo.png" alt="Arzobispado de Toledo" title="Arzobispado de Toledo" /></li>
-				<li><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.catedral.toledo.png" alt="Excelentísimo Cabildo de la Santa Iglesia Catedral Primada" title="Excelentísimo Cabildo de la Santa Iglesia Catedral Primada" /></li>
-				<li><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.museo.ejercito.png" alt="Museo del Ejército" title="Museo del Ejército" /></li>
-				<li><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.museo.prado.gif" alt="Museo del Prado" title="Museo del Prado" /></li>
-				<li><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.museo.sefardi.png" alt="Museo Sefardí" title="Museo Sefardí" /></li>
-				<li><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.museo.greco.png" alt="Museo del Greco" title="Museo del Greco" /></li>
-				<li><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.museo.santa.cruz.png" alt="Museo de Santa Cruz" title="Museo de Santa Cruz" /></li>
+				<li><a href="http://www.ayto-toledo.org/"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.ayuntamiento.toledo.png" alt="Ayuntamiento de Toledo" title="Ayuntamiento de Toledo" /></a></li>
+				<li><a href="https://www.jccm.es/"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.junta.castilla.la.mancha.png" alt="Junta de Comunidades de Castilla- La Mancha" title="Junta de Comunidades de Castilla- La Mancha" /></a></li>
+				<li><a href="http://www.mecd.gob.es/portada-mecd/"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.ministerio.cultura.png" alt="Ministerio de Cultura y Deporte" title="Ministerio de Cultura y Deporte" /></a></li>
+				<li><a href="http://www.consorciotoledo.com/"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.consorcio.toledo.png" alt="Consorcio de Toledo" title="Consorcio de Toledo" /></a></li>
+				<li><a href="http://www.architoledo.org/"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.arzobispado.toledo.png" alt="Arzobispado de Toledo" title="Arzobispado de Toledo" /></a></li>
+				<li><a href="http://www.catedralprimada.es/cabildo_presentacion/"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.catedral.toledo.png" alt="Excelentísimo Cabildo de la Santa Iglesia Catedral Primada" title="Excelentísimo Cabildo de la Santa Iglesia Catedral Primada" /></a></li>
+				<li><a href="http://www.museo.ejercito.es/"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.museo.ejercito.png" alt="Museo del Ejército" title="Museo del Ejército" /></a></li>
+				<li><a href="https://www.museodelprado.es/"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.museo.prado.gif" alt="Museo del Prado" title="Museo del Prado" /></a></li>
+				<li><a href="http://museosefardi.mcu.es/"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.museo.sefardi.png" alt="Museo Sefardí" title="Museo Sefardí" /></a></li>
+				<li><a href="http://museodelgreco.mcu.es/"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.museo.greco.png" alt="Museo del Greco" title="Museo del Greco" /></a></li>
+				<li><a href="http://www.turismocastillalamancha.es/patrimonio/museo-de-santa-cruz-3861/visita/"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.museo.santa.cruz.png" alt="Museo de Santa Cruz" title="Museo de Santa Cruz" /></a></li>
 
 				<li><a href="http://uclm.es/ceclm" title="Centro de Estudios de Castilla- La Mancha"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.ceclm.png" alt="Centro de Estudios de Castilla- La Mancha" /></a></li>
 				<li><a href="http://www.uclm.es/organos/vic_empresas/catedras.asp?op=5" title="Cátedras Universidad-Empresa -- Universidad de Castilla- La Mancha"><img src="<?php echo $genvars['blogtheme']; ?>/images/colabora.crural.png" alt="Cátedras Universidad-Empresa -- Universidad de Castilla- La Mancha" /></a></li>
