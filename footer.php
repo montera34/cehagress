@@ -41,15 +41,15 @@ require_once( get_stylesheet_directory(). '/general-vars.php' );
 			</ul>
 			</div>
 		</div>
-		<div class="row topslim">
-			<div class="span5">
+		<div class="row">
+			<div class="span5 topslim">
 			<h3 class="tit3">Contacto:</h3>
 			<ul class="inline">
 				<li><i class="icon-envelope"></i> <a href="/informacion-practica/contacto/"><small>Envíanos un correo</small></a></li>
 				<li><i class="icon-plus-sign"></i> <a href="https://www.facebook.com/XxCongresoNacionalDeHistoriaDelArte"><small>Facebook</small></a> | <a href="https://twitter.com/xxcongresoceha"><small>Twitter</small></a></li>
 			</ul>
 			</div>
-			<div class="span4">
+			<div class="span4 topslim">
 			<h3 class="tit3">Créditos:</h3>
 			<ul class="inline">
 				<li><small>Diseño: <a href="http://jorgechamorro.es">Jorge Chamorro</a></li>
